@@ -14,9 +14,18 @@
       <div>
         <p class="eyebrow">STUDENT DIRECTORY</p>
         <h1>Student Management</h1>
-        <p class="subtitle">Keep your student records organized in one place.</p>
+        <p class="subtitle">A clear view of your growing campus community.</p>
       </div>
-      <button class="button button-primary" id="add-student-button" type="button">Add student</button>
+      <div class="header-actions">
+        <div class="workspace-note">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span><strong>Your workspace</strong><small>Saved on this device</small></span>
+        </div>
+        <button class="button button-primary" id="add-student-button" type="button">
+          <span class="button-plus" aria-hidden="true">+</span>
+          Add student
+        </button>
+      </div>
     </header>
 
     <section class="summary-card" aria-label="Student summary">
@@ -24,6 +33,11 @@
       <div>
         <p class="summary-label">Total students</p>
         <p class="summary-value" id="student-count">0</p>
+        <p class="summary-caption">Students in your directory</p>
+      </div>
+      <div class="summary-aside" aria-label="Records are saved in this browser">
+        <span class="summary-aside-icon" aria-hidden="true">✓</span>
+        <span><strong>Always at hand</strong><small>Stored in this browser</small></span>
       </div>
     </section>
 
