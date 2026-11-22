@@ -1,0 +1,5 @@
+# Java build output
+*.class
+
+# Local student records contain personal data
+students.csv

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>Student Management</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">STUDENT DIRECTORY</p>
+        <h1>Student Management</h1>
+        <p class="subtitle">Keep your student records organized in one place.</p>
+      </div>
+      <button class="button button-primary" id="add-student-button" type="button">Add student</button>
+    </header>
+
+    <section class="summary-card" aria-label="Student summary">
+      <div class="summary-icon" aria-hidden="true">S</div>
+      <div>
+        <p class="summary-label">Total students</p>
+        <p class="summary-value" id="student-count">0</p>
+      </div>
+    </section>
+
+    <section class="directory-card" aria-labelledby="directory-title">
+      <div class="directory-header">
+        <div>
+          <h2 id="directory-title">All students</h2>
+          <p>Search by name, ID, or branch.</p>
+        </div>
+        <label class="search-box">
+          <span class="visually-hidden">Search students</span>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="search-input" type="search" placeholder="Search students..." autocomplete="off">
+        </label>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Student</th>
+              <th scope="col">Student ID</th>
+              <th scope="col">Branch</th>
+              <th scope="col"><span class="visually-hidden">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="student-list"></tbody>
+        </table>
+        <div class="empty-state" id="empty-state">
+          <div class="empty-icon" aria-hidden="true">◎</div>
+          <h3 id="empty-title">No students yet</h3>
+          <p id="empty-message">Add a student to get started.</p>
+        </div>
+      </div>
+      <p class="storage-note">Records are saved in this browser on this device.</p>
+    </section>
+  </main>
+
+  <dialog id="student-dialog" aria-labelledby="dialog-title">
+    <form id="student-form">
+      <div class="dialog-header">
+        <div>
+          <p class="eyebrow">STUDENT DETAILS</p>
+          <h2 id="dialog-title">Add student</h2>
+        </div>
+        <button class="icon-button" id="close-dialog-button" type="button" aria-label="Close dialog">×</button>
+      </div>
+      <label class="form-field" for="student-id">
+        Student ID
+        <input id="student-id" name="id" maxlength="40" required autocomplete="off">
+      </label>
+      <label class="form-field" for="student-name">
+        Name
+        <input id="student-name" name="name" maxlength="100" required autocomplete="name">
+      </label>
+      <label class="form-field" for="student-branch">
+        Branch
+        <input id="student-branch" name="branch" maxlength="60" required autocomplete="off">
+      </label>
+      <p class="form-error" id="form-error" role="alert"></p>
+      <div class="dialog-actions">
+        <button class="button button-secondary" id="cancel-button" type="button">Cancel</button>
+        <button class="button button-primary" id="save-button" type="submit">Add student</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
